@@ -1,0 +1,103 @@
+{
+  "sessions": [
+    {
+      "email": "4fddc849ec9c6c1d@2200freefonts.com",
+      "cookies": [
+        {
+          "name": "_ga",
+          "value": "GA1.1.978957995.1763129715",
+          "domain": ".fitroom.app",
+          "path": "/",
+          "expires": 1797689720.261806,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "vercel-experiment-uuid",
+          "value": "SNBLwWfHSBEdsou-XB2Tv",
+          "domain": "vercel.live",
+          "path": "/",
+          "expires": -1,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "None",
+          "partitionKey": "https://fitroom.app",
+          "_crHasCrossSiteAncestor": true
+        },
+        {
+          "name": "_ga_PD3FYG9NL9",
+          "value": "GS2.1.s1763129714$o1$g1$t1763129733$j41$l0$h223670875",
+          "domain": ".fitroom.app",
+          "path": "/",
+          "expires": 1797689733.045515,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        }
+      ],
+      "storage_state": {
+        "cookies": [
+          {
+            "name": "_ga",
+            "value": "GA1.1.978957995.1763129715",
+            "domain": ".fitroom.app",
+            "path": "/",
+            "expires": 1797689720.261806,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+          },
+          {
+            "name": "vercel-experiment-uuid",
+            "value": "SNBLwWfHSBEdsou-XB2Tv",
+            "domain": "vercel.live",
+            "path": "/",
+            "expires": -1,
+            "httpOnly": true,
+            "secure": true,
+            "sameSite": "None",
+            "partitionKey": "https://fitroom.app",
+            "_crHasCrossSiteAncestor": true
+          },
+          {
+            "name": "_ga_PD3FYG9NL9",
+            "value": "GS2.1.s1763129714$o1$g1$t1763129733$j41$l0$h223670875",
+            "domain": ".fitroom.app",
+            "path": "/",
+            "expires": 1797689733.045515,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+          }
+        ],
+        "origins": [
+          {
+            "origin": "https://fitroom.app",
+            "localStorage": [
+              {
+                "name": "emailForSignIn",
+                "value": "4fddc849ec9c6c1d@2200freefonts.com"
+              }
+            ]
+          },
+          {
+            "origin": "https://vercel.live",
+            "localStorage": [
+              {
+                "name": "vercel-toolbar-experiment-uuid-https://fitroom.app",
+                "value": "\"SNBLwWfHSBEdsou-XB2Tv\""
+              },
+              {
+                "name": "vid-https://fitroom.app",
+                "value": "\"17631297160880.8576324742919489\""
+              }
+            ]
+          }
+        ]
+      },
+      "created_at": 1763129733.7255542
+    }
+  ],
+  "current_index": 1
+}
