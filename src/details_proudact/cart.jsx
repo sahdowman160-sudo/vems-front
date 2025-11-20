@@ -854,7 +854,8 @@ const DetailsProduct = () => {
                 onClick={() => {
                   // Save first image to localStorage
                   if (product.image && product.image[0]) {
-                    localStorage.setItem("tryOnImage", product.image[1]);
+                    
+                    localStorage.setItem("tryOnImage", product.image[product.image.length - 1]);
                     showToast(
                       "Image saved! Redirecting to Try On...",
                       <Check size={20} className="text-green-600" />
