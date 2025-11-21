@@ -16,7 +16,7 @@ export default function VerificationCodePage() {
     let email = typeof window !== 'undefined' ? window.localStorage?.getItem("email") : null;
     
     try {
-      const response = await fetch("http://127.0.0.1:8000/verify", {
+      const response = await fetch("https://vems-api.yousseif.me/verify", {
         method: "POST",
         body: JSON.stringify({ verificationCode, email }),
         headers: {
