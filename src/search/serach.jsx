@@ -22,7 +22,7 @@ export default function SearchPage() {
     setSearched(true);
 
     try {
-      const response = await fetch(https://vems-api.yousseif.me/psearch`, {
+      const response = await fetch('https://vems-api.yousseif.me/psearch`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
