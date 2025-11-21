@@ -63,7 +63,7 @@ const CheckoutForm = ({ data, quantity, size, totalPrice, onClose, onSuccess }) 
         way_payment: formData.way_payment
       };
 
-      const response = await fetch("http://127.0.0.1:8000/Bay", {
+      const response = await fetch("https://vems-api.yousseif.me/Bay", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -243,7 +243,7 @@ const ProductBox = ({ data, onClose }) => {
         token_user: token
       };
    
-      const response = await fetch("http://127.0.0.1:8000/check", {
+      const response = await fetch("https://vems-api.yousseif.me/check", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -268,7 +268,7 @@ const ProductBox = ({ data, onClose }) => {
           token_user: token
         };
 
-        await fetch("http://127.0.0.1:8000/insert_cart", {
+        await fetch("https://vems-api.yousseif.me/insert_cart", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -301,7 +301,7 @@ const ProductBox = ({ data, onClose }) => {
 
     try {
       // Verify token validity
-      const tokenResponse = await fetch("http://127.0.0.1:8000/extrct", {
+      const tokenResponse = await fetch("https://vems-api.yousseif.me/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
