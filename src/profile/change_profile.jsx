@@ -80,7 +80,7 @@ export default function ChangePassword() {
       // Get token from localStorage
       const token = localStorage.getItem('token');
       
-      const response = await fetch('http://localhost:8000/change-password', {
+      const response = await fetch('https://vems-api.yousseif.me/change-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
