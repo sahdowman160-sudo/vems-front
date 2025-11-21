@@ -57,7 +57,7 @@ const navigate = useNavigate();
       }
 
       try {
-        const response = await fetch("http://127.0.0.1:8000/extrct_super", {
+        const response = await fetch("https://vems-api.yousseif.me/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -171,7 +171,7 @@ navigate("/login");
         data.append("images", img.file);
       });
 
-      const response = await fetch("http://127.0.0.1:8000/insert_proudect", {
+      const response = await fetch("https://vems-api.yousseif.me/insert_proudect", {
         method: "POST",
         body: data,
       });
