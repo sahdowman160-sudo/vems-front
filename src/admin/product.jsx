@@ -53,7 +53,7 @@ const App = () => {
       }
 
       try {
-        const response = await fetch("http://127.0.0.1:8000/extrct_super", {
+        const response = await fetch("https://vems-api.yousseif.me/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -96,7 +96,7 @@ navigate("/login");
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://127.0.0.1:8000/product');
+      const response = await fetch('https://vems-api.yousseif.me/product');
       if (!response.ok) {
         throw new Error('Failed to fetch products');
       }
@@ -111,7 +111,7 @@ navigate("/login");
 
   const deleteProduct = async (productId) => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/Delet_Product', {
+      const response = await fetch('https://vems-api.yousseif.me/Delet_Product', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
