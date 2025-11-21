@@ -22,7 +22,7 @@ export default function SearchPage() {
     setSearched(true);
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000/search`, {
+      const response = await fetch(https://vems-api.yousseif.me/psearch`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -134,7 +134,7 @@ export default function SearchPage() {
   const handltokenH = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://127.0.0.1:8000/extrct", {
+      const response = await fetch("https://vems-api.yousseif.me/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -158,7 +158,7 @@ export default function SearchPage() {
     console.log(e.target.id);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/extrct", {
+      const response = await fetch("https://vems-api.yousseif.me/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -171,7 +171,7 @@ export default function SearchPage() {
       const result = await response.json();
 
       if (result.status === "success") {
-        const pop = await fetch("http://127.0.0.1:8000/select", {
+        const pop = await fetch("https://vems-api.yousseif.me/select", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
