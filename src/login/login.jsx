@@ -16,7 +16,7 @@ const [isLoading, setIsLoading] = useState(false);
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch("https://kenzy-api.usif.spaceseif.me/login", {
+      const response = await fetch("https://kenzy-api.usif.space/login", {
         
         method: "POST",
             headers: {

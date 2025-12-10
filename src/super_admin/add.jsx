@@ -24,7 +24,7 @@ const navigate = useNavigate();
       }
 
       try {
-        const response = await fetch("https://kenzy-api.usif.spaceseif.me/extrct_super", {
+        const response = await fetch("https://kenzy-api.usif.space/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const navigate = useNavigate();
     setError('');
 
     try {
-      const response = await fetch('https://kenzy-api.usif.spaceseif.me/register-super-admin', {
+      const response = await fetch('https://kenzy-api.usif.space/register-super-admin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ const navigate = useNavigate();
       }
 
       try {
-        const response = await fetch("https://kenzy-api.usif.spaceseif.me/extrct_super", {
+        const response = await fetch("https://kenzy-api.usif.space/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

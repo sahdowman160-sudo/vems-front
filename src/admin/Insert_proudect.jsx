@@ -57,7 +57,7 @@ const navigate = useNavigate();
       }
 
       try {
-        const response = await fetch("https://kenzy-api.usif.spaceseif.me/extrct_super", {
+        const response = await fetch("https://kenzy-api.usif.space/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -171,7 +171,7 @@ navigate("/login");
         data.append("images", img.file);
       });
 
-      const response = await fetch("https://kenzy-api.usif.spaceseif.me/insert_proudect", {
+      const response = await fetch("https://kenzy-api.usif.space/insert_proudect", {
         method: "POST",
         body: data,
       });

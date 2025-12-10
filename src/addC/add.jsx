@@ -63,7 +63,7 @@ const CheckoutForm = ({ data, quantity, size, totalPrice, onClose, onSuccess }) 
         way_payment: formData.way_payment
       };
 
-      const response = await fetch("https://kenzy-api.usif.spaceseif.me/Bay", {
+      const response = await fetch("https://kenzy-api.usif.space/Bay", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -243,7 +243,7 @@ const ProductBox = ({ data, onClose }) => {
         token_user: token
       };
    
-      const response = await fetch("https://kenzy-api.usif.spaceseif.me/check", {
+      const response = await fetch("https://kenzy-api.usif.space/check", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -268,7 +268,7 @@ const ProductBox = ({ data, onClose }) => {
           token_user: token
         };
 
-        await fetch("https://kenzy-api.usif.spaceseif.me/insert_cart", {
+        await fetch("https://kenzy-api.usif.space/insert_cart", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -301,7 +301,7 @@ const ProductBox = ({ data, onClose }) => {
 
     try {
       // Verify token validity
-      const tokenResponse = await fetch("https://kenzy-api.usif.spaceseif.me/extrct", {
+      const tokenResponse = await fetch("https://kenzy-api.usif.space/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

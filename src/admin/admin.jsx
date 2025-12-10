@@ -26,7 +26,7 @@ export default function AdminPanel() {
       }
 
       try {
-        const response = await fetch("https://kenzy-api.usif.spaceseif.me/extrct_super", {
+        const response = await fetch("https://kenzy-api.usif.space/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -68,7 +68,7 @@ export default function AdminPanel() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('https://kenzy-api.usif.spaceseif.me/users', {
+        const response = await fetch('https://kenzy-api.usif.space/users', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ export default function AdminPanel() {
   useEffect(() => {
     const fetchRevenue = async () => {
       try {
-        const response = await fetch('https://kenzy-api.usif.spaceseif.me/money', {
+        const response = await fetch('https://kenzy-api.usif.space/money', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -127,7 +127,7 @@ export default function AdminPanel() {
   useEffect(() => {
     const fetchCartCount = async () => {
       try {
-        const response = await fetch('https://kenzy-api.usif.spaceseif.me/count_cart', {
+        const response = await fetch('https://kenzy-api.usif.space/count_cart', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -157,7 +157,7 @@ export default function AdminPanel() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await fetch('https://kenzy-api.usif.spaceseif.me/count_products', {
+        const response = await fetch('https://kenzy-api.usif.space/count_products', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
