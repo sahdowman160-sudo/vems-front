@@ -44,7 +44,7 @@ export default function AdminOrders() {
       }
 
       try {
-        const response = await fetch("http://127.0.0.1:8000/extrct_super", {
+        const response = await fetch("https://vems-api.yousseif.me/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -98,7 +98,7 @@ navigate("/login");
     setUpdatingOrderId(order.id);
     
     try {
-      const response = await fetch('http://127.0.0.1:8000/update_bay_stute', {
+      const response = await fetch('https://vems-api.yousseif.me/update_bay_stute', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ navigate("/login");
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/get_bayA', {
+        const response = await fetch('https://vems-api.yousseif.me/get_bayA', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

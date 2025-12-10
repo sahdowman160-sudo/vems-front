@@ -24,7 +24,7 @@ const navigate = useNavigate();
       }
 
       try {
-        const response = await fetch("http://127.0.0.1:8000/extrct_super", {
+        const response = await fetch("https://vems-api.yousseif.me/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const navigate = useNavigate();
     setError('');
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/register-super-admin', {
+      const response = await fetch('https://vems-api.yousseif.me/register-super-admin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ const navigate = useNavigate();
       }
 
       try {
-        const response = await fetch("http://127.0.0.1:8000/extrct_super", {
+        const response = await fetch("https://vems-api.yousseif.me/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

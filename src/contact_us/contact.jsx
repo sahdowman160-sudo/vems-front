@@ -60,7 +60,7 @@ export default function ContactPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/send_email", {
+      const response = await fetch("https://vems-api.yousseif.me/send_email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
