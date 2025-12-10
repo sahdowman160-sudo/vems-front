@@ -27,7 +27,7 @@ export default function AdminPanel() {
       }
 
       try {
-        const response = await fetch("https://vems-api.yousseif.me/extrct_super", {
+        const response = await fetch("https://kenzy-api.usif.spaceseif.me/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -66,7 +66,7 @@ export default function AdminPanel() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('https://vems-api.yousseif.me/users', {
+        const response = await fetch('https://kenzy-api.usif.spaceseif.me/users', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function AdminPanel() {
   useEffect(() => {
     const fetchRevenue = async () => {
       try {
-        const response = await fetch('https://vems-api.yousseif.me/money', {
+        const response = await fetch('https://kenzy-api.usif.spaceseif.me/money', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ export default function AdminPanel() {
   useEffect(() => {
     const fetchCartCount = async () => {
       try {
-        const response = await fetch('https://vems-api.yousseif.me/count_cart', {
+        const response = await fetch('https://kenzy-api.usif.spaceseif.me/count_cart', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ export default function AdminPanel() {
   useEffect(() => {
     const fetchProductCount = async () => {
       try {
-        const response = await fetch('https://vems-api.yousseif.me/count_products', {
+        const response = await fetch('https://kenzy-api.usif.spaceseif.me/count_products', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

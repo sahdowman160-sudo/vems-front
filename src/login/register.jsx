@@ -13,7 +13,7 @@ const [isLoading, setIsLoading] = useState(false);
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch("https://vems-api.yousseif.me/register", {
+      const response = await fetch("https://kenzy-api.usif.spaceseif.me/register", {
         
         method: "POST",
             headers: {

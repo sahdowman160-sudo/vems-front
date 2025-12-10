@@ -15,7 +15,7 @@ const AddInspoPage = () => {
       try {
         const token = window.localStorage.getItem("token");
         
-        const response = await fetch('https://vems-api.yousseif.me/like', {
+        const response = await fetch('https://kenzy-api.usif.spaceseif.me/like', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ const AddInspoPage = () => {
     try {
       const token = window.localStorage.getItem("token");
       
-      const response = await fetch('https://vems-api.yousseif.me/delete_like', {
+      const response = await fetch('https://kenzy-api.usif.spaceseif.me/delete_like', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

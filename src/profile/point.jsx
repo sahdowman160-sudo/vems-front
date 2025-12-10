@@ -21,7 +21,7 @@ const fetchUserPoints = async () => {
       return;
     }
 
-    const response = await fetch('http://127.0.0.1:8000/points', {
+    const response = await fetch('https://kenzy-api.usif.space/points', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', // ✅ required

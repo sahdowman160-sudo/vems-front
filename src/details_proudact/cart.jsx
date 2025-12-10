@@ -113,7 +113,7 @@ const DetailsProduct = () => {
   const handleAddToCart = async () => {
     if (window.localStorage.getItem("token")) {
       const totalPrice = product.price * quantity;
-      const token = await fetch("https://vems-api.yousseif.me/extrct", {
+      const token = await fetch("https://kenzy-api.usif.spaceseif.me/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -140,7 +140,7 @@ const DetailsProduct = () => {
         };
 
         try {
-          const response = await fetch("https://vems-api.yousseif.me/check", {
+          const response = await fetch("https://kenzy-api.usif.spaceseif.me/check", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -156,7 +156,7 @@ const DetailsProduct = () => {
               <Check size={20} className="text-red-600" />
             );
           } else {
-              await fetch("https://vems-api.yousseif.me/insert_cart", {
+              await fetch("https://kenzy-api.usif.spaceseif.me/insert_cart", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(payload),
@@ -185,7 +185,7 @@ const DetailsProduct = () => {
   const handleBuyNow = async () => {
     if (window.localStorage.getItem("token")) {
       const totalPrice = product.price * quantity;
-      const token = await fetch("https://vems-api.yousseif.me/extrct", {
+      const token = await fetch("https://kenzy-api.usif.spaceseif.me/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -238,7 +238,7 @@ const DetailsProduct = () => {
 
   const handleAddToWishlist = async () => {
     if (window.localStorage.getItem("token")) {
-      const tokenCheck = await fetch("https://vems-api.yousseif.me/extrct", {
+      const tokenCheck = await fetch("https://kenzy-api.usif.spaceseif.me/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -259,7 +259,7 @@ const DetailsProduct = () => {
         try {
           if (isWishlisted) {
             // Delete like
-            const response = await fetch("https://vems-api.yousseif.me/delete_like", {
+            const response = await fetch("https://kenzy-api.usif.spaceseif.me/delete_like", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -282,7 +282,7 @@ const DetailsProduct = () => {
             }
           } else {
             // Add like
-            const response = await fetch("https://vems-api.yousseif.me/insert_like", {
+            const response = await fetch("https://kenzy-api.usif.spaceseif.me/insert_like", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -324,7 +324,7 @@ const DetailsProduct = () => {
       return;
     }
 
-    const tokenCheck = await fetch("https://vems-api.yousseif.me/extrct", {
+    const tokenCheck = await fetch("https://kenzy-api.usif.spaceseif.me/extrct", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -346,7 +346,7 @@ const DetailsProduct = () => {
       try {
         if (isLiked) {
           // Delete like
-          const response = await fetch("https://vems-api.yousseif.me/delete_like", {
+          const response = await fetch("https://kenzy-api.usif.spaceseif.me/delete_like", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -369,7 +369,7 @@ const DetailsProduct = () => {
           }
         } else {
           // Add like
-          const response = await fetch("https://vems-api.yousseif.me/insert_like", {
+          const response = await fetch("https://kenzy-api.usif.spaceseif.me/insert_like", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -410,7 +410,7 @@ const DetailsProduct = () => {
         }
 
         // Fetch single product
-        const productResponse = await fetch("https://vems-api.yousseif.me/select", {
+        const productResponse = await fetch("https://kenzy-api.usif.spaceseif.me/select", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id }),
@@ -425,7 +425,7 @@ const DetailsProduct = () => {
         // Fetch liked products for this user
         const token = localStorage.getItem("token");
         if (token) {
-          const likeResponse = await fetch("https://vems-api.yousseif.me/show_like", {
+          const likeResponse = await fetch("https://kenzy-api.usif.spaceseif.me/show_like", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -468,7 +468,7 @@ const DetailsProduct = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await fetch("https://vems-api.yousseif.me/product", {
+        const response = await fetch("https://kenzy-api.usif.spaceseif.me/product", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });

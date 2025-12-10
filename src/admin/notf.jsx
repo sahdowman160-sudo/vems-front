@@ -55,7 +55,7 @@ const navigate = useNavigate();
       }
 
       try {
-        const response = await fetch("https://vems-api.yousseif.me/extrct_super", {
+        const response = await fetch("https://kenzy-api.usif.spaceseif.me/extrct_super", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -148,7 +148,7 @@ navigate("/login");
     setSuccessMessage('');
 
     try {
-      const response = await fetch('https://vems-api.yousseif.me/insert_notfiction', {
+      const response = await fetch('https://kenzy-api.usif.spaceseif.me/insert_notfiction', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

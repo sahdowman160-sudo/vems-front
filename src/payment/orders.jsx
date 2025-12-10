@@ -33,7 +33,7 @@ export default function UserOrders() {
       // Extract numeric ID from "ORD-42" format
       const numericId = orderToCancel.id.replace('ORD-', '');
       
-      const response = await fetch('https://vems-api.yousseif.me/cancel_order', {
+      const response = await fetch('https://kenzy-api.usif.spaceseif.me/cancel_order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ export default function UserOrders() {
           return;
         }
 
-        const response = await fetch('https://vems-api.yousseif.me/get_bay', {
+        const response = await fetch('https://kenzy-api.usif.spaceseif.me/get_bay', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

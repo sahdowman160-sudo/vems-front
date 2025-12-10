@@ -246,7 +246,7 @@ export default function CheckoutPage() {
           
           console.log('Sending order for item:', item.name, apiData);
           
-          return fetch('https://vems-api.yousseif.me/Bay', {
+          return fetch('https://kenzy-api.usif.spaceseif.me/Bay', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -268,7 +268,7 @@ export default function CheckoutPage() {
           if (orderItems.length > 0) {
             const deletePromises = orderItems.map(item => {
               if (item.cart_id) {
-                return fetch('https://vems-api.yousseif.me/Delet_cart', {
+                return fetch('https://kenzy-api.usif.spaceseif.me/Delet_cart', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
@@ -313,7 +313,7 @@ export default function CheckoutPage() {
         
         console.log('Sending single order:', apiData);
         
-        const response = await fetch('http://127.0.0.1:8000/Bay', {
+        const response = await fetch('https://kenzy-api.usif.space/Bay', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

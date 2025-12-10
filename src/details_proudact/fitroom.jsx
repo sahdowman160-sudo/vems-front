@@ -122,7 +122,7 @@ export default function FitRoomSelector() {
       formData.append('clothes', clothesBlob, 'clothes.jpg');
       formData.append('model', modelImage);
 
-      const response = await fetch('http://127.0.0.1:8000/try_on', {
+      const response = await fetch('https://kenzy-api.usif.space/try_on', {
         method: 'POST',
         body: formData,
       });
@@ -138,7 +138,7 @@ export default function FitRoomSelector() {
         if (data.result_url) {
           setResultImage(data.result_url);
         } else if (data.result?.result_path) {
-          setResultImage(`http://127.0.0.1:8000${data.result.result_path}`);
+          setResultImage(`https://kenzy-api.usif.space${data.result.result_path}`);
         }
         showToast(
           "Vems result generated!",

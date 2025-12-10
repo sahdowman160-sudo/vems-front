@@ -16,7 +16,7 @@ export default function VerificationCodePage() {
     let email = typeof window !== 'undefined' ? window.localStorage?.getItem("email") : null;
     
     try {
-      const response = await fetch("https://vems-api.yousseif.me/verify", {
+      const response = await fetch("https://kenzy-api.usif.spaceseif.me/verify", {
         method: "POST",
         body: JSON.stringify({ verificationCode, email }),
         headers: {
