@@ -29,7 +29,7 @@ const [isLoading, setIsLoading] = useState(false);
       const result = await response.json();
       if (result.status === "success") {
         window.localStorage.setItem("email", result.email); // تخزين البريد الإلكتروني
-        window.location.href="/code"
+        window.location.href="/start"
       }else{
        alert("This email is already registered. Please login or use a different email."); // رسالة خطأ في حالة عدم نجاح التسجيل
       }
