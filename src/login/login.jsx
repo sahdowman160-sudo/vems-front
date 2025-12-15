@@ -16,7 +16,7 @@ const [isLoading, setIsLoading] = useState(false);
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch("https://kenzy-api.usif.space/login", {
+      const response = await fetch("http://127.0.0.1:8000/login", {
         
         method: "POST",
             headers: {
@@ -95,14 +95,14 @@ const [isLoading, setIsLoading] = useState(false);
         <div className="bg-black/40 backdrop-blur-xl rounded-3xl p-8 w-full max-w-md border border-white/10 shadow-2xl">
           {/* Logo */}
            <div className="flex justify-center mb-6">
-            <div className="w-8 text-white h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+            <div className="flex items-center space-x-4">
+          <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[64px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
             </div>
           </div>
 
           {/* Title */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-white mb-2">Welcome to <em>VEMS</em></h1>
+            <h1 className="text-2xl font-bold text-white mb-2">Welcome to <em>Kenzy</em></h1>
             <p className="text-gray-300 text-sm">
           Please enter your email to continue
               
@@ -123,7 +123,7 @@ const [isLoading, setIsLoading] = useState(false);
               className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
             />
             <input
-              type="password"
+              type="text"
               name="pass"
               required
               disabled={isLoading}
