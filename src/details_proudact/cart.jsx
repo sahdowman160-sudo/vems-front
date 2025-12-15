@@ -113,7 +113,7 @@ const DetailsProduct = () => {
   const handleAddToCart = async () => {
     if (window.localStorage.getItem("token")) {
       const totalPrice = product.price * quantity;
-      const token = await fetch("https://kenzy-api.usif.space/extrct", {
+      const token = await fetch("http://127.0.0.1:8000/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -140,7 +140,7 @@ const DetailsProduct = () => {
         };
 
         try {
-          const response = await fetch("https://kenzy-api.usif.space/check", {
+          const response = await fetch("http://127.0.0.1:8000/check", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -156,7 +156,7 @@ const DetailsProduct = () => {
               <Check size={20} className="text-red-600" />
             );
           } else {
-              await fetch("https://kenzy-api.usif.space/insert_cart", {
+              await fetch("http://127.0.0.1:8000/insert_cart", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(payload),
@@ -185,7 +185,7 @@ const DetailsProduct = () => {
   const handleBuyNow = async () => {
     if (window.localStorage.getItem("token")) {
       const totalPrice = product.price * quantity;
-      const token = await fetch("https://kenzy-api.usif.space/extrct", {
+      const token = await fetch("http://127.0.0.1:8000/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -238,7 +238,7 @@ const DetailsProduct = () => {
 
   const handleAddToWishlist = async () => {
     if (window.localStorage.getItem("token")) {
-      const tokenCheck = await fetch("https://kenzy-api.usif.space/extrct", {
+      const tokenCheck = await fetch("http://127.0.0.1:8000/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -259,7 +259,7 @@ const DetailsProduct = () => {
         try {
           if (isWishlisted) {
             // Delete like
-            const response = await fetch("https://kenzy-api.usif.space/delete_like", {
+            const response = await fetch("http://127.0.0.1:8000/delete_like", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -282,7 +282,7 @@ const DetailsProduct = () => {
             }
           } else {
             // Add like
-            const response = await fetch("https://kenzy-api.usif.space/insert_like", {
+            const response = await fetch("http://127.0.0.1:8000/insert_like", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -324,7 +324,7 @@ const DetailsProduct = () => {
       return;
     }
 
-    const tokenCheck = await fetch("https://kenzy-api.usif.space/extrct", {
+    const tokenCheck = await fetch("http://127.0.0.1:8000/extrct", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -346,7 +346,7 @@ const DetailsProduct = () => {
       try {
         if (isLiked) {
           // Delete like
-          const response = await fetch("https://kenzy-api.usif.space/delete_like", {
+          const response = await fetch("http://127.0.0.1:8000/delete_like", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -369,7 +369,7 @@ const DetailsProduct = () => {
           }
         } else {
           // Add like
-          const response = await fetch("https://kenzy-api.usif.space/insert_like", {
+          const response = await fetch("http://127.0.0.1:8000/insert_like", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -410,7 +410,7 @@ const DetailsProduct = () => {
         }
 
         // Fetch single product
-        const productResponse = await fetch("https://kenzy-api.usif.space/select", {
+        const productResponse = await fetch("http://127.0.0.1:8000/select", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id }),
@@ -425,7 +425,7 @@ const DetailsProduct = () => {
         // Fetch liked products for this user
         const token = localStorage.getItem("token");
         if (token) {
-          const likeResponse = await fetch("https://kenzy-api.usif.space/show_like", {
+          const likeResponse = await fetch("http://127.0.0.1:8000/show_like", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -468,7 +468,7 @@ const DetailsProduct = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await fetch("https://kenzy-api.usif.space/product", {
+        const response = await fetch("http://127.0.0.1:8000/product", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -604,9 +604,9 @@ const DetailsProduct = () => {
           </button>
           <div className="flex items-center space-x-2 sm:space-x-3">
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+          <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[43px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
             </div>
-            <span className="text-xl sm:text-2xl font-bold text-white">VEMS</span>
+            <span className="text-xl sm:text-2xl font-bold text-white">Kenzy</span>
           </div>
           
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
