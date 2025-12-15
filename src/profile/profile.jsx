@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Mail, Gift , Save, Shield, Bell, Key, Camera, Package, ArrowLeft, ChevronRight , Sparkles  } from 'lucide-react';
 import {Link} from "react-router-dom"
 export default function UserProfile() {
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
-    name: 'VEMS User',
+    name: 'Kenzy User',
     email: window.localStorage.getItem("email"),
 
   });
@@ -16,6 +16,15 @@ export default function UserProfile() {
   const handleSave = () => {
     setIsEditing(false);
   };
+
+
+  useEffect(() => {
+if(window.localStorage.getItem("token")){
+
+}else{
+  window.location.href="/login"
+}
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-950 relative overflow-hidden">
@@ -41,9 +50,9 @@ export default function UserProfile() {
                 </div>
         <div className="flex items-center space-x-4">
                      <div className="w-8 text-white h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+          <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[43px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
             </div>
-          <h1 className="text-2xl font-bold text-white">VEMS</h1>
+          <h1 className="text-2xl font-bold text-white">Kenzy</h1>
         </div>
       </div>
 
@@ -59,7 +68,8 @@ export default function UserProfile() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8">
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <div className="relative">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold text-white">VM</div>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-xl sm:text-2xl font-bold text-white">          <img src={"https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"} alt="" className="w-[96px] h-[80px] sm:w-[96px]  sm:h-[96px] bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
+                </div>
                 
               </div>
               <div className="text-center sm:text-left">
