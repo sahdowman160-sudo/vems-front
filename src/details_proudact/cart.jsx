@@ -113,7 +113,7 @@ const DetailsProduct = () => {
   const handleAddToCart = async () => {
     if (window.localStorage.getItem("token")) {
       const totalPrice = product.price * quantity;
-      const token = await fetch("https://kenzy-api.usif.space/ extrct", {
+      const token = await fetch("https://kenzy-api.usif.space/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -140,7 +140,7 @@ const DetailsProduct = () => {
         };
 
         try {
-          const response = await fetch("https://kenzy-api.usif.space/ check", {
+          const response = await fetch("https://kenzy-api.usif.space/check", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -185,7 +185,7 @@ const DetailsProduct = () => {
   const handleBuyNow = async () => {
     if (window.localStorage.getItem("token")) {
       const totalPrice = product.price * quantity;
-      const token = await fetch("https://kenzy-api.usif.space/ extrct", {
+      const token = await fetch("https://kenzy-api.usif.space/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
