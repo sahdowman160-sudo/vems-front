@@ -32,7 +32,7 @@ export default function MobileOptimizedProductsPage() {
   // Fetch products and parse images
   useEffect(() => {
     setLoading(true);
-    fetch('https://kenzy-api.usif.space/ product')
+    fetch('https://kenzy-api.usif.space/product')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch products');
