@@ -141,8 +141,10 @@ export default function ChangePassword() {
           <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
         </button>
         <div className="flex items-center space-x-4">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
-          <h1 className="text-2xl font-bold text-white">VEMS</h1>
+         
+                    <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[43px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
+          
+          <h1 className="text-2xl font-bold text-white">Kenzy</h1>
         </div>
       </div>
 
