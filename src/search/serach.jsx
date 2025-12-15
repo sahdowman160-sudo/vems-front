@@ -171,7 +171,7 @@ export default function SearchPage() {
       const result = await response.json();
 
       if (result.status === "success") {
-        const pop = await fetch("https://vems-api.yousseif.me/select", {
+        const pop = await fetch("https://kenzy-api.usif.space/select", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
