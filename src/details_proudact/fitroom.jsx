@@ -122,7 +122,7 @@ export default function FitRoomSelector() {
       formData.append('clothes', clothesBlob, 'clothes.jpg');
       formData.append('model', modelImage);
 
-      const response = await fetch('https://kenzy-api.usif.space/try_on', {
+      const response = await fetch('http://127.0.0.1:8000/try_on', {
         method: 'POST',
         body: formData,
       });
@@ -308,9 +308,9 @@ export default function FitRoomSelector() {
           
           <div className="flex items-center space-x-2 sm:space-x-3">
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+          <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[43px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
             </div>
-            <span className="text-xl sm:text-2xl font-bold text-white">VEMS</span>
+            <span className="text-xl sm:text-2xl font-bold text-white">Kenzy</span>
           </div>
           
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
@@ -388,7 +388,7 @@ export default function FitRoomSelector() {
             Virtual Try-On
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent leading-tight">
-            Vems AI
+            Kenzy AI
           </h1>
           <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
             Upload your model image and let AI show you how the clothes look on you
@@ -568,7 +568,7 @@ export default function FitRoomSelector() {
             ) : (
               <>
                 <Sparkles className="w-5 h-5" />
-                <span>Generate Vems Result</span>
+                <span>Generate Kenzy Result</span>
               </>
             )}
           </button>
