@@ -32,7 +32,7 @@ export default function MobileOptimizedProductsPage() {
   // Fetch products and parse images
   useEffect(() => {
     setLoading(true);
-    fetch('https://kenzy-api.usif.space/product')
+    fetch('http://127.0.0.1:8000/product')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch products');
@@ -126,7 +126,7 @@ export default function MobileOptimizedProductsPage() {
     console.log(e.target.id);
 
     try {
-      const response = await fetch("https://kenzy-api.usif.space/extrct", {
+      const response = await fetch("http://127.0.0.1:8000/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -139,7 +139,7 @@ export default function MobileOptimizedProductsPage() {
       const result = await response.json();
 
       if (result.status === "success") {
-        const pop = await fetch("https://kenzy-api.usif.space/select", {
+        const pop = await fetch("http://127.0.0.1:8000/select", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -166,7 +166,7 @@ export default function MobileOptimizedProductsPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://kenzy-api.usif.space/extrct", {
+      const response = await fetch("http://127.0.0.1:8000/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -306,11 +306,13 @@ export default function MobileOptimizedProductsPage() {
             <div className="flex items-center space-x-2 sm:space-x-4">
               <div className="">
             <div className="w-8 text-white h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+                         <div className="flex items-center space-x-4">
+          <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[43px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
+            </div>
             </div>
               </div>
               <span className="font-bold text-lg sm:text-2xl text-white">
-                VEMS
+                Kenzy
               </span>
             </div>
 
@@ -739,14 +741,14 @@ export default function MobileOptimizedProductsPage() {
               <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
                 </div>
-                <span className="text-xl sm:text-2xl font-bold">VEMS</span>
+                <span className="text-xl sm:text-2xl font-bold">Kenzy</span>
               </div>
               <p className="text-gray-300 text-sm mb-4 max-w-xs mx-auto sm:mx-0">
                 Streamline your business's financial operations with our
                 intuitive, scalable SaaS platform.
               </p>
               <p className="text-gray-500 text-xs sm:text-sm">
-                &copy; 2025 VEMS. All rights reserved.
+                &copy; 2025 Kenzy. All rights reserved.
               </p>
             </div>
 
