@@ -15,7 +15,7 @@ const AddInspoPage = () => {
       try {
         const token = window.localStorage.getItem("token");
         
-        const response = await fetch('http://127.0.0.1:8000/like', {
+        const response = await fetch('https://kenzy-api.usif.space/ like', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ const AddInspoPage = () => {
     try {
       const token = window.localStorage.getItem("token");
       
-      const response = await fetch('http://127.0.0.1:8000/delete_like', {
+      const response = await fetch('https://kenzy-api.usif.space/ delete_like', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
