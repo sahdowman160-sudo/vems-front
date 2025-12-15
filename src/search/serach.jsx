@@ -235,7 +235,7 @@ export default function SearchPage() {
           <div className="mb-6">
             <span className="inline-flex items-center px-4 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-white/70 text-sm font-medium">
               <div className="w-2 h-2 bg-white/60 rounded-full mr-2"></div>
-              VEMS
+              Kenzy
             </span>
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-transparent bg-gradient-to-br from-gray-200 via-gray-400 to-gray-600 bg-clip-text mb-4">
@@ -441,9 +441,9 @@ export default function SearchPage() {
       {/* Footer */}
       <div className="relative z-10 mt-16 pb-8">
         <p className="text-white/40 text-sm text-center">
-          ©2025 VEMS • Built by{' '}
+          ©2025 Kenzy • Built by{' '}
           <span className="text-white/60 hover:text-white/80 transition-colors cursor-pointer">
-            SHADOW
+            Galaxy-Station
           </span>
         </p>
       </div>
