@@ -126,7 +126,7 @@ export default function MobileOptimizedProductsPage() {
     console.log(e.target.id);
 
     try {
-      const response = await fetch("https://kenzy-api.usif.space/ extrct", {
+      const response = await fetch("https://kenzy-api.usif.space/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -139,7 +139,7 @@ export default function MobileOptimizedProductsPage() {
       const result = await response.json();
 
       if (result.status === "success") {
-        const pop = await fetch("https://kenzy-api.usif.space/ select", {
+        const pop = await fetch("https://kenzy-api.usif.space/select", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -166,7 +166,7 @@ export default function MobileOptimizedProductsPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://kenzy-api.usif.space/ extrct", {
+      const response = await fetch("https://kenzy-api.usif.space/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
