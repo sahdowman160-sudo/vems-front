@@ -19,7 +19,7 @@ export default function ShoppingCart() {
           return;
         }
 
-        const response = await fetch("http://127.0.0.1:8000/cart_user", {
+        const response = await fetch("https://kenzy-api.usif.space/ cart_user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -155,7 +155,7 @@ export default function ShoppingCart() {
     if (!token) return;
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/Delet_cart", {
+      const response = await fetch("https://kenzy-api.usif.space/ Delet_cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
