@@ -156,7 +156,7 @@ const DetailsProduct = () => {
               <Check size={20} className="text-red-600" />
             );
           } else {
-              await fetch("https://kenzy-api.usif.space/ insert_cart", {
+              await fetch("https://kenzy-api.usif.space/insert_cart", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(payload),
@@ -238,7 +238,7 @@ const DetailsProduct = () => {
 
   const handleAddToWishlist = async () => {
     if (window.localStorage.getItem("token")) {
-      const tokenCheck = await fetch("https://kenzy-api.usif.space/ extrct", {
+      const tokenCheck = await fetch("https://kenzy-api.usif.space/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -259,7 +259,7 @@ const DetailsProduct = () => {
         try {
           if (isWishlisted) {
             // Delete like
-            const response = await fetch("https://kenzy-api.usif.space/ delete_like", {
+            const response = await fetch("https://kenzy-api.usif.space/delete_like", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -282,7 +282,7 @@ const DetailsProduct = () => {
             }
           } else {
             // Add like
-            const response = await fetch("https://kenzy-api.usif.space/ insert_like", {
+            const response = await fetch("https://kenzy-api.usif.space/insert_like", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -324,7 +324,7 @@ const DetailsProduct = () => {
       return;
     }
 
-    const tokenCheck = await fetch("https://kenzy-api.usif.space/ extrct", {
+    const tokenCheck = await fetch("https://kenzy-api.usif.space/extrct", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -346,7 +346,7 @@ const DetailsProduct = () => {
       try {
         if (isLiked) {
           // Delete like
-          const response = await fetch("https://kenzy-api.usif.space/ delete_like", {
+          const response = await fetch("https://kenzy-api.usif.space/delete_like", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -369,7 +369,7 @@ const DetailsProduct = () => {
           }
         } else {
           // Add like
-          const response = await fetch("https://kenzy-api.usif.space/ insert_like", {
+          const response = await fetch("https://kenzy-api.usif.space/insert_like", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -410,7 +410,7 @@ const DetailsProduct = () => {
         }
 
         // Fetch single product
-        const productResponse = await fetch("https://kenzy-api.usif.space/ select", {
+        const productResponse = await fetch("https://kenzy-api.usif.space/select", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id }),
@@ -425,7 +425,7 @@ const DetailsProduct = () => {
         // Fetch liked products for this user
         const token = localStorage.getItem("token");
         if (token) {
-          const likeResponse = await fetch("https://kenzy-api.usif.space/ show_like", {
+          const likeResponse = await fetch("https://kenzy-api.usif.space/show_like", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -468,7 +468,7 @@ const DetailsProduct = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await fetch("https://kenzy-api.usif.space/ product", {
+        const response = await fetch("https://kenzy-api.usif.space/product", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
