@@ -19,7 +19,7 @@ export default function ShoppingCart() {
           return;
         }
 
-        const response = await fetch("https://kenzy-api.usif.space/ cart_user", {
+        const response = await fetch("https://kenzy-api.usif.space/cart_user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
