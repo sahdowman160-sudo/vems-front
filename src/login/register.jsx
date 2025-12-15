@@ -13,7 +13,7 @@ const [isLoading, setIsLoading] = useState(false);
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch("https://kenzy-api.usif.space/ register", {
+      const response = await fetch("https://kenzy-api.usif.space/register", {
         
         method: "POST",
             headers: {
