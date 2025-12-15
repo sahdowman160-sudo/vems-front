@@ -13,7 +13,7 @@ export default function NotificationPage() {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const response = await fetch('https://kenzy-api.usif.space/ message');
+        const response = await fetch('https://kenzy-api.usif.space/message');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
