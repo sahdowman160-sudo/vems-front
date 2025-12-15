@@ -60,7 +60,7 @@ export default function ContactPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://kenzy-api.usif.space/send_email", {
+      const response = await fetch("http://127.0.0.1:8000/send_email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,15 +96,14 @@ export default function ContactPage() {
 
       {/* Header */}
       <div className="relative z-10 flex items-center justify-between p-8">
-        <div className="flex items-center bg-white/10 backdrop-blur-sm border border-white/20 p-[9px] rounded-[35px]">
+        <div className="flex w-[46px] items-center bg-white/10 backdrop-blur-sm border border-white/20 p-[9px] rounded-full">
           <Link to="/" className="text-white text-lg font-semibold mr-4">
             <IoIosArrowBack className="text-2xl cursor-pointer" />
           </Link>
-          <Link to="/" className="text-xl font-bold text-white">GO BACK</Link>
         </div>
         <div className="flex items-center space-x-4">
-          <img src={img} alt="" className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
-          <h1 className="text-2xl font-bold text-white">VEMS</h1>
+          <img src={"https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"} alt="" className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
+          <h1 className="text-2xl font-bold text-white">Kenzy</h1>
         </div>
       </div>
 
