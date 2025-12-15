@@ -158,7 +158,7 @@ export default function SearchPage() {
     console.log(e.target.id);
 
     try {
-      const response = await fetch("https://vems-api.yousseif.me/extrct", {
+      const response = await fetch("https://kenzy-api.usif.space/extrct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
