@@ -172,7 +172,7 @@ const AddInspoPage = () => {
         </Link>
         <div className="flex items-center space-x-2 sm:space-x-4">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+             <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[32px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
           </div>
           <h1 className="text-xl sm:text-2xl font-bold text-white">Kenzy</h1>
         </div>
@@ -324,57 +324,111 @@ const AddInspoPage = () => {
       )}
 
       {/* Footer */}
+
+
       <footer className="w-full absolute left-0 bg-gradient-to-b from-gray-900 from-20% to-black to-80% text-white py-12 px-4 md:px-8 lg:px-16 min-h-[400px] overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          
-          <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transform rotate-12 animate-pulse"></div>
-            <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent transform -rotate-12 animate-pulse delay-500"></div>
-          </div>
-          
-          <div className="absolute inset-0 opacity-5">
-            <div className="grid grid-cols-12 h-full">
-              {Array.from({ length: 12 }).map((_, i) => (
-                <div key={i} className="border-r border-white/10 h-full"></div>
-              ))}
-            </div>
-          </div>
-        </div>
 
-        <div className="container mx-auto relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="md:col-span-1 lg:col-span-1">
-              <div className="flex items-center mb-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <span className="text-2xl font-bold">Kenzy</span>
-              </div>
-              <p className="text-gray-300 text-sm mb-4">
-                Streamline your business's financial operations with our intuitive, scalable SaaS platform.
-              </p>
-              <p className="text-gray-500 text-sm">&copy; 2025 Kenzy. All rights reserved.</p>
-            </div>
 
-            <div className="lg:col-span-1 flex justify-center items-center">
-              <ul className='flex gap-[22px] justify-center text-[25px]'>
-                <li className="mb-2 text-gray-300 font-semibold"><i className="fa-brands fa-facebook-f"></i></li>
-                <li className="mb-2 text-gray-300 font-semibold"><i className="fa-brands fa-instagram"></i></li>
-                <li className="mb-2 text-gray-300 font-semibold"><i className="fa-brands fa-tiktok"></i></li>
-                <li className="mb-2 text-gray-300 font-semibold"><i className="fa-brands fa-x-twitter"></i></li>
-              </ul>
-            </div>
 
-            <div className='flex justify-center items-center'>
-              <p className='text-gray-500 text-sm'>
-                MADE BY <span className='font-semibold text-white'>Galaxy-Station</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+
+
+
+
+
+           {/* Background Effects */}
+           <div className="absolute inset-0">
+             <div className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full blur-3xl animate-pulse"></div>
+             <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-80 h-48 sm:h-80 bg-gradient-to-l from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+   
+             <div className="absolute top-0 left-0 w-full h-full">
+               <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent transform rotate-12 animate-pulse"></div>
+               <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent transform -rotate-12 animate-pulse delay-500"></div>
+             </div>
+   
+             <div className="absolute inset-0 opacity-5">
+               <div className="grid grid-cols-12 h-full">
+                 {Array.from({ length: 12 }).map((_, i) => (
+                   <div key={i} className="border-r border-white/10 h-full"></div>
+                 ))}
+               </div>
+             </div>
+           </div>
+   
+           <div
+             className="absolute inset-0 z-0 opacity-50"
+             style={{
+               backgroundImage:
+                 "radial-gradient(circle, rgba(31, 41, 55, 0.5) 0%, transparent 50%, rgba(0, 0, 0, 0.5) 70%)",
+               top: "-50%",
+             }}
+           ></div>
+   
+           <div className="container mx-auto relative z-10">
+             {/* Responsive Grid: 1 col mobile, 2 cols tablet, 4 cols desktop */}
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+               
+               {/* Company Info Column */}
+               <div className="text-center sm:text-left lg:col-span-1">
+                 <div className="flex items-center justify-center sm:justify-start mb-4">
+                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-xl font-bold overflow-hidden">
+               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+             <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[43px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
+               </div>
+                   </div>
+                   <span className="text-xl sm:text-2xl font-bold">Kenzy</span>
+                 </div>
+                 <p className="text-gray-300 text-sm mb-4 max-w-xs mx-auto sm:mx-0">
+                   Streamline your business's financial operations with our
+                   intuitive, scalable SaaS platform.
+                 </p>
+                 <p className="text-gray-500 text-xs sm:text-sm">
+                   &copy; 2025 Kenzy. All rights reserved.
+                 </p>
+               </div>
+   
+               {/* Quick Links - Hidden on mobile */}
+               <div className="hidden sm:block lg:col-span-1">
+                 <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+                 <ul className="space-y-2">
+                   <li>
+                     <Link to="/" className="text-gray-300 hover:text-white transition-colors text-sm block">
+                       Home
+                     </Link>
+                   </li>
+                   <li>
+                     <Link to="/Contact" className="text-gray-300 hover:text-white transition-colors text-sm block">
+                       Contact
+                     </Link>
+                   </li>
+   
+                 </ul>
+               </div>
+   
+               {/* Social Media Column */}
+           
+   
+               {/* Credits Column */}
+               <div className="text-center sm:text-left lg:col-span-1">
+                 <h3 className="text-white font-semibold text-lg mb-4">Credits</h3>
+                 <p className="text-gray-400 text-sm">
+                   MADE BY <span className="font-semibold text-white">Galaxy-Station</span>
+                 </p>
+               </div>
+             </div>
+   
+             {/* Mobile-only Quick Links at Bottom */}
+             <div className="sm:hidden mt-8 pt-6 border-t border-white/10">
+               <div className="flex flex-wrap justify-center gap-3 text-sm">
+                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">
+                   Home
+                 </Link>
+                 <Link to="/Contact" className="text-gray-300 hover:text-white transition-colors">
+                   Contact
+                 </Link>
+               </div>
+             </div>
+           </div>
+         </footer>
     </div>
   );
 };
