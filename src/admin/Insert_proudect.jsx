@@ -10,7 +10,9 @@ export default function InsertProduct() {
     originalPrice: '',
     category: '',
     rating: '',
-    reviews: ''
+    reviews: '',
+    Brand:""
+
   });
 
 
@@ -159,6 +161,7 @@ navigate("/login");
     try {
       const data = new FormData();
       data.append("name", formData.name);
+      data.append("Brand", formData.Brand);
       data.append("caption", formData.caption);
       data.append("price", formData.price);
       data.append("originalPrice", formData.originalPrice);
@@ -189,6 +192,7 @@ navigate("/login");
         setShowSuccess(false);
         setFormData({
           name: '',
+          Brand:'',
           caption: '',
           price: '',
           originalPrice: '',
@@ -292,7 +296,21 @@ navigate("/login");
               required
             />
           </div>
-
+          <div className="p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            <label className="flex items-center gap-2 text-white font-semibold mb-3">
+              <Tag size={18} className="text-orange-400" />
+              Brand Name
+            </label>
+            <input
+              type="text"
+              name="Brand"
+              value={formData.Brand}
+              onChange={handleInputChange}
+              placeholder="Enter product name..."
+              className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 outline-none focus:border-orange-500/50 focus:bg-white/10 transition-all"
+              required
+            />
+          </div>
           {/* الوصف */}
           <div className="p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
             <label className="flex items-center gap-2 text-white font-semibold mb-3">
