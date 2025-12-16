@@ -622,11 +622,13 @@ const DetailsProduct = () => {
             </button>
             
 
-            <Link to="/cart">
+          
             <button className="p-2 hover:bg-gray-800 rounded-full transition-colors relative bg-white/10 backdrop-blur-sm border border-white/20">
+                <Link to="/cart">
               <ShoppingCart className="w-4 h-4 lg:w-5 lg:h-5 text-gray-400" />
+                  </Link>
             </button>
-            </Link>
+            
             <button className="p-2 hover:bg-gray-800 rounded-full transition-colors bg-white/10 backdrop-blur-sm border border-white/20">
               <Link to="/profile">
                 <User className="w-5 h-5" />
