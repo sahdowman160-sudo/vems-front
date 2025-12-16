@@ -21,6 +21,7 @@ export default function MobileOptimizedProductsPage() {
   const [favorites, setFavorites] = useState(new Set());
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isBrandMenuOpen, setIsBrandMenuOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(true);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
@@ -28,6 +29,21 @@ export default function MobileOptimizedProductsPage() {
   const [loading, setLoading] = useState(true);
   const sliderRef = useRef(null);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 640);
+  const [selectedBrand, setSelectedBrand] = useState(null);
+  const [uniqueBrands, setUniqueBrands] = useState([]);
+
+  // Get brand from URL parameters
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandFromUrl = urlParams.get('brand');
+    
+    if (brandFromUrl) {
+      // Decode the brand name in case it has special characters
+      const decodedBrand = decodeURIComponent(brandFromUrl);
+      setSelectedBrand(decodedBrand);
+      setActiveTab("Brand");
+    }
+  }, []);
 
   // Fetch products and parse images
   useEffect(() => {
@@ -46,37 +62,30 @@ export default function MobileOptimizedProductsPage() {
           try {
             let images = [];
             
-            // Check if images field exists and is an array
             if (Array.isArray(p.images)) {
               images = p.images;
             } 
-            // Try parsing the image field
             else if (p.image) {
               console.log(`Processing image for ${p.name}:`, p.image);
               
-              // Try to fix truncated JSON by adding closing bracket if needed
               let imageStr = p.image.trim();
               
-              // If string starts with [ but doesn't end with ], try to fix it
               if (imageStr.startsWith('[') && !imageStr.endsWith(']')) {
                 console.warn(`Truncated image data detected for ${p.name}`);
-                // Try to extract valid URLs before truncation
                 const urlMatches = imageStr.match(/https:\/\/[^\s"]+/g);
                 if (urlMatches && urlMatches.length > 0) {
                   images = urlMatches;
                   console.log(`Extracted URLs:`, images);
                 }
               } else {
-                // Normal parsing
                 imageStr = imageStr
-                  .replace(/\\_/g, "") // Remove escaped underscores
-                  .replace(/\\/g, ""); // Remove backslashes
+                  .replace(/\\_/g, "")
+                  .replace(/\\/g, "");
                 
                 images = JSON.parse(imageStr);
               }
             }
             
-            // Validate image URLs
             images = images.filter(url => {
               if (typeof url === 'string' && url.startsWith('http')) {
                 return true;
@@ -113,6 +122,10 @@ export default function MobileOptimizedProductsPage() {
         
         console.log("Parsed products:", parsed);
         setProducts(parsed);
+        
+        const brands = [...new Set(parsed.map(p => p.brand).filter(Boolean))];
+        setUniqueBrands(brands.sort());
+        
         setLoading(false);
       })
       .catch((error) => {
@@ -150,9 +163,7 @@ export default function MobileOptimizedProductsPage() {
         const popResult = await pop.json();
         console.log("Data from backend:", popResult);
 
-        // Store data first
         setPopData(popResult);
-        // Then open modal
         setpop(false);
       } else {
         navigate("/login");
@@ -196,7 +207,6 @@ export default function MobileOptimizedProductsPage() {
     },
   ];
 
-  // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -205,7 +215,6 @@ export default function MobileOptimizedProductsPage() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  // Touch handlers for swipe navigation
   const minSwipeDistance = 50;
 
   const onTouchStart = (e) => {
@@ -263,11 +272,32 @@ export default function MobileOptimizedProductsPage() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const tabs = ["ALL", "Men", "Woman", "Kides"];
+  // Close brand menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isBrandMenuOpen && !event.target.closest('.brand-menu-container')) {
+        setIsBrandMenuOpen(false);
+      }
+    };
+
+    if (isBrandMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isBrandMenuOpen]);
+
+  const tabs = ["ALL", "Men", "Woman", "Kides", "Brand"];
 
   const filteredProducts =
     activeTab === "ALL"
       ? products
+      : activeTab === "Brand"
+      ? selectedBrand
+        ? products.filter((product) => product.brand === selectedBrand)
+        : products
       : products.filter((product) => product.category === activeTab);
 
   return (
@@ -304,12 +334,8 @@ export default function MobileOptimizedProductsPage() {
             </button>
 
             <div className="flex items-center space-x-2 sm:space-x-4">
-              <div className="">
-            <div className="w-8 text-white h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                         <div className="flex items-center space-x-4">
-          <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[43px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
-            </div>
-            </div>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center overflow-hidden">
+                <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg" alt="" className="w-full h-full object-cover" />
               </div>
               <span className="font-bold text-lg sm:text-2xl text-white">
                 Kenzy
@@ -342,7 +368,6 @@ export default function MobileOptimizedProductsPage() {
                 <Link to="/cart">
                   <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Link>
-
               </button>
 
               <button className="hidden sm:flex w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all">
@@ -352,10 +377,9 @@ export default function MobileOptimizedProductsPage() {
               </button>
 
               <button className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all relative">
-                <Link to="/heart" className="">
+                <Link to="/heart">
                   <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Link>
-
               </button>
             </div>
           </div>
@@ -513,7 +537,14 @@ export default function MobileOptimizedProductsPage() {
               {tabs.map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => {
+                    if (tab === "Brand") {
+                      setIsBrandMenuOpen(true);
+                    } else {
+                      setActiveTab(tab);
+                      setSelectedBrand(null);
+                    }
+                  }}
                   className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-xs sm:text-sm transition-all duration-300 ${
                     activeTab === tab
                       ? "bg-white/20 text-white shadow-lg"
@@ -526,6 +557,65 @@ export default function MobileOptimizedProductsPage() {
             </div>
           </div>
         </div>
+
+        {/* Brand Selection Box - Shows when Brand button is clicked */}
+        {isBrandMenuOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-lg">
+            <div className="brand-menu-container bg-black/95 border border-white/10 rounded-2xl px-6 py-6 w-[90%] max-w-md shadow-[0_0_3px_0_white] max-h-[70vh] overflow-y-auto">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-white text-xl font-bold">Select Brand</h3>
+                <button
+                  onClick={() => setIsBrandMenuOpen(false)}
+                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <div className="space-y-2">
+                {uniqueBrands.map((brand) => (
+                  <button
+                    key={brand}
+                    onClick={() => {
+                      setSelectedBrand(brand);
+                      setActiveTab("Brand");
+                      setIsBrandMenuOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-3 rounded-lg text-white/80 bg-white/5 hover:bg-white/10 hover:text-white transition-all duration-200 border border-white/10 hover:border-white/20"
+                  >
+                    {brand}
+                  </button>
+                ))}
+                
+                <div className="border-t border-white/10 my-3"></div>
+                
+                <button
+                  onClick={() => {
+                    setSelectedBrand(null);
+                    setActiveTab("ALL");
+                    setIsBrandMenuOpen(false);
+                  }}
+                  className="w-full text-left px-4 py-3 rounded-lg text-white/60 bg-white/5 hover:bg-white/10 hover:text-white transition-all duration-200 border border-white/10 hover:border-white/20"
+                >
+                  View All Products
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Brand Selection Section */}
+ {/* Brand Selection Section */}
+        {activeTab === "Brand" && selectedBrand && (
+          <div className="mb-8 sm:mb-12">
+            <div className="text-center">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white border-2 border-transparent shadow-lg">
+                <span className="font-semibold text-sm">{selectedBrand}</span>
+
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Loading State */}
         {loading ? (
@@ -557,8 +647,6 @@ export default function MobileOptimizedProductsPage() {
                               src={product.image}
                               alt={product.name}
                               className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
-
-
                               onError={(e) => {
                                 e.target.src = "https://via.placeholder.com/300x400?text=No+Image";
                               }}
@@ -630,7 +718,7 @@ export default function MobileOptimizedProductsPage() {
                               ({product.reviews} reviews)
                             </p>
 
-                            <div className="flex items-center space-x-3">
+                            <div className="flex items-center space-x-3 mb-4">
                               <span className="text-2xl font-bold text-white">
                                 ${product.price}
                               </span>
@@ -647,7 +735,7 @@ export default function MobileOptimizedProductsPage() {
                                 e.preventDefault();
                                 handltokenC(e);
                               }}
-                              className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95"
+                              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-full font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95"
                             >
                               Add to Cart
                             </button>
@@ -730,16 +818,13 @@ export default function MobileOptimizedProductsPage() {
         ></div>
 
         <div className="container mx-auto relative z-10">
-          {/* Responsive Grid: 1 col mobile, 2 cols tablet, 4 cols desktop */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             
             {/* Company Info Column */}
             <div className="text-center sm:text-left lg:col-span-1">
               <div className="flex items-center justify-center sm:justify-start mb-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full mr-2 flex items-center justify-center text-xl font-bold overflow-hidden">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-          <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[43px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
-            </div>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center overflow-hidden mr-2">
+                  <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg" alt="" className="w-full h-full object-cover" />
                 </div>
                 <span className="text-xl sm:text-2xl font-bold">Kenzy</span>
               </div>
@@ -752,7 +837,7 @@ export default function MobileOptimizedProductsPage() {
               </p>
             </div>
 
-            {/* Quick Links - Hidden on mobile */}
+            {/* Quick Links */}
             <div className="hidden sm:block lg:col-span-1">
               <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2">
@@ -766,12 +851,8 @@ export default function MobileOptimizedProductsPage() {
                     Contact
                   </Link>
                 </li>
-
               </ul>
             </div>
-
-            {/* Social Media Column */}
-        
 
             {/* Credits Column */}
             <div className="text-center sm:text-left lg:col-span-1">
