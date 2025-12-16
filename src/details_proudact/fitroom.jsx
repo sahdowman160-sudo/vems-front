@@ -274,7 +274,7 @@ export default function FitRoomSelector() {
           <div className="bg-gradient-to-br from-purple-900/40 to-blue-900/40 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-purple-500/30 shadow-2xl max-w-md w-full mx-4">
             <div className="text-center mb-8">
               <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center animate-pulse">
-                <Sparkles className="w-10 h-10 text-white" />
+          <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[83px] h-[83px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Generating Your AI Try-On</h3>
               <p className="text-gray-300 text-sm">⏳ Please wait while our AI creates magic...</p>
