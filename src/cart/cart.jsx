@@ -155,7 +155,7 @@ export default function ShoppingCart() {
     if (!token) return;
 
     try {
-      const response = await fetch("https://kenzy-api.usif.space/ Delet_cart", {
+      const response = await fetch("https://kenzy-api.usif.space/Delet_cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
