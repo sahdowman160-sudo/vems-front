@@ -741,7 +741,7 @@ export default function MobileOptimizedProductsPage() {
               <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
                 </div>
-                <span className="text-xl sm:text-2xl font-bold">Kenzy</span>
+          <img src="https://i.ibb.co/QvKdRXDr/Whats-App-Image-2025-12-15-at-10-32-04-e58c092b.jpg"alt="" className="w-[66px] h-[43px]  bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center" />
               </div>
               <p className="text-gray-300 text-sm mb-4 max-w-xs mx-auto sm:mx-0">
                 Streamline your business's financial operations with our
